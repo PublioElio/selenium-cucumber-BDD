@@ -41,12 +41,5 @@
       <artifactId>cucumber-picocontainer</artifactId>
       <version>7.13.0</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber -->
-    <dependency>
-      <groupId>net.serenity-bdd</groupId>
-      <artifactId>serenity-cucumber</artifactId>
-      <version>4.1.10</version>
-    </dependency>
-
   </dependencies>
 </project>
