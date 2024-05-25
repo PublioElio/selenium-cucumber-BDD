@@ -6,10 +6,6 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class EbayHomeSteps {
     WebDriver driver;
@@ -18,9 +14,9 @@ public class EbayHomeSteps {
         driver = CommonSteps.getDriver();
     }
 
-    @Given("I am on Ebay home page")
-    public void i_am_on_ebay_home_page() {
-        driver.get("https://www.ebay.com/");
+    @Given("I am on this page {string}")
+    public void i_am_on_this_page(String url) {
+        driver.get(url);
     }
 
     @When("I click on the Advanced Search link")
@@ -35,18 +31,25 @@ public class EbayHomeSteps {
         Assert.assertEquals("Url does not match", expUrl, actUrl);
     }
 
-    @When("I search for iphone")
-    public void i_search_for_iphone() {
-        driver.findElement(By.xpath("//input[@id='gh-ac']")).sendKeys("iphone");
+    @When("I search for {string}")
+    public void i_search_for(String item) {
+        driver.findElement(By.xpath("//input[@id='gh-ac']")).sendKeys(item);
         driver.findElement(By.xpath("//input[@id='gh-btn']")).click();
     }
 
-    @Then("I should see at least 1000 items count")
-    public void i_should_see_at_least_items_count() {
+    @Then("I should see at least {int} items count")
+    public void i_should_see_at_least_items_count(int count) {
         String countText = driver.findElement(
                 By.xpath("//h1[@class='srp-controls__count-heading']/span[@class='BOLD'][1]")).getText();
-        Assert.assertTrue("Count is less than 1000",
-                Integer.parseInt(countText.replaceAll(",", "")) >= 1000);
+        Assert.assertTrue("Count is less than " + count + " items count",
+                Integer.parseInt(countText.replaceAll(",", "")) >= count);
+    }
+
+    @When("I search for {string} on the category {string}")
+    public void i_search_for_on_the_category(String item, String category) {
+        driver.findElement(By.xpath("//input[@id='gh-ac']")).sendKeys(item);
+        driver.findElement(By.xpath("//select[@id='gh-cat']")).sendKeys(category);
+        driver.findElement(By.xpath("//input[@id='gh-btn']")).click();
     }
 
 }

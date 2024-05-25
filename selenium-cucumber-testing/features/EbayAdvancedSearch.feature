@@ -1,4 +1,4 @@
-Feature: Evay Advanced Search Page
+Feature: Ebay Advanced Search Page
 
   @AdvSearch00
   Scenario: Ebay Logo on Advanced Search Page
