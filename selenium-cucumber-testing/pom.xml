@@ -15,10 +15,11 @@
   </properties>
 
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
@@ -33,6 +34,18 @@
       <artifactId>cucumber-junit</artifactId>
       <version>7.16.1</version>
       <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-picocontainer</artifactId>
+      <version>7.13.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber -->
+    <dependency>
+      <groupId>net.serenity-bdd</groupId>
+      <artifactId>serenity-cucumber</artifactId>
+      <version>4.1.10</version>
     </dependency>
 
   </dependencies>
