@@ -36,13 +36,17 @@ public class EbayHomeSteps {
     }
 
     @When("I search for iphone")
-    public void i_search_for() {
+    public void i_search_for_iphone() {
         driver.findElement(By.xpath("//input[@id='gh-ac']")).sendKeys("iphone");
         driver.findElement(By.xpath("//input[@id='gh-btn']")).click();
     }
+
     @Then("I should see at least 1000 items count")
     public void i_should_see_at_least_items_count() {
-        driver.findElement(By.xpath("//h1[@class='srp-controls__count-heading']"));
+        String countText = driver.findElement(
+                By.xpath("//h1[@class='srp-controls__count-heading']/span[@class='BOLD'][1]")).getText();
+        Assert.assertTrue("Count is less than 1000",
+                Integer.parseInt(countText.replaceAll(",", "")) >= 1000);
     }
 
 }

@@ -8,5 +8,5 @@ Feature: Ebay Home Page Scenarios
 
   Scenario: Search items count
     Given I am on Ebay home page
-    When I search for "iphone"
+    When I search for iphone
     Then I should see at least 1000 items count
