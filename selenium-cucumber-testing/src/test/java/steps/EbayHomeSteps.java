@@ -25,8 +25,6 @@ public class EbayHomeSteps {
 
     @When("I click on the Advanced Search link")
     public void i_click_on_the_advanced_search_link() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='gh-as-a']")));
         driver.findElement(By.xpath("//*[@id='gh-as-a']")).click();
     }
 
@@ -35,6 +33,16 @@ public class EbayHomeSteps {
         String expUrl = "https://www.ebay.com/sch/ebayadvsearch";
         String actUrl = driver.getCurrentUrl();
         Assert.assertEquals("Url does not match", expUrl, actUrl);
+    }
+
+    @When("I search for iphone")
+    public void i_search_for() {
+        driver.findElement(By.xpath("//input[@id='gh-ac']")).sendKeys("iphone");
+        driver.findElement(By.xpath("//input[@id='gh-btn']")).click();
+    }
+    @Then("I should see at least 1000 items count")
+    public void i_should_see_at_least_items_count() {
+        driver.findElement(By.xpath("//h1[@class='srp-controls__count-heading']"));
     }
 
 }

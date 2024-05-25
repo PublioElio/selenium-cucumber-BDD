@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "features",
         glue = "steps",
-        //dryRun = true,
+        dryRun = true,
         //monochrome = true,
-        tags = "@P00",
+        //tags = "@P01",
         //name = "Ebay",
         plugin = {"pretty", "html:target/cucumber-reports"}
 )
