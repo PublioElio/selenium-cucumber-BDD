@@ -9,6 +9,9 @@ import org.junit.runner.RunWith;
         features = "features",
         glue = "steps",
         //dryRun = true,
+        //monochrome = true,
+        tags = "@P00",
+        //name = "Ebay",
         plugin = {"pretty", "html:target/cucumber-reports"}
 )
 public class TestRunner {
