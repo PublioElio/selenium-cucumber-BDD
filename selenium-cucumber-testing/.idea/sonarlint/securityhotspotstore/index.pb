@@ -45,3 +45,5 @@ b
 0src/test/java/actions/pages/ActionsPageHome.java,a\8\a83567325795b0a329fe944a6e074b12a47015e9
 e
 5src/test/java/actions/pages/ActionsPageAdvSearch.java,2\7\2764e1d71a53cac454dadde87b35b88a9587eb70
+^
+.src/test/java/actions/pages/ActionsCommon.java,d\1\d1b55453783a931063e787a4fac115501958d60d

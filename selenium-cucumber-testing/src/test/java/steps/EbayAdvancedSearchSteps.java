@@ -1,17 +1,18 @@
 package steps;
 
+import actions.pages.ActionsCommon;
 import actions.pages.ActionsPageAdvSearch;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
 
 public class EbayAdvancedSearchSteps {
-    private final WebDriver driver;
+    private final ActionsCommon actionsCommon;
     private final ActionsPageAdvSearch actionsPageAdvSearch;
 
-    public EbayAdvancedSearchSteps(CommonSteps commonSteps) {
-        this.driver = CommonSteps.getDriver();
-        actionsPageAdvSearch = new ActionsPageAdvSearch(commonSteps);
+    public EbayAdvancedSearchSteps(ActionsCommon actionsCommon,
+                                   ActionsPageAdvSearch actionsPageAdvSearch) {
+        this.actionsCommon = actionsCommon;
+        this.actionsPageAdvSearch = actionsPageAdvSearch;
     }
 
     @When("I click on the Ebay Logo")
