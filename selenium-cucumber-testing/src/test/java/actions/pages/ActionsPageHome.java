@@ -6,15 +6,15 @@ import steps.CommonSteps;
 
 public class ActionsPageHome {
 
-    private WebDriver driver;
-    private ElementsPageHome elementsPageHome;
+    private final WebDriver driver;
+    private final ElementsPageHome elementsPageHome;
 
-    public ActionsPageHome() {
+    public ActionsPageHome(CommonSteps commonSteps) {
         driver = CommonSteps.getDriver();
-        elementsPageHome = new ElementsPageHome(driver);
+        elementsPageHome = new ElementsPageHome(commonSteps);
     }
 
-    public void clickOnAvancedLink() {
+    public void clickOnAdvancedLink() {
         elementsPageHome.advancedSearchLink.click();
     }
 

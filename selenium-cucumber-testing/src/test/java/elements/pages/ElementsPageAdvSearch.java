@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import steps.CommonSteps;
 
 public class ElementsPageAdvSearch {
     public WebDriver driver;
@@ -14,8 +15,8 @@ public class ElementsPageAdvSearch {
     @FindBy(xpath = "//input[@name='_udhi']") public WebElement maxPriceInput;
     @FindBy(xpath = "//button[contains(@data-marko, 's0-1-17-11')]") public WebElement searchButton;
 
-    public ElementsPageAdvSearch(WebDriver driver) {
-        this.driver = driver;
+    public ElementsPageAdvSearch(CommonSteps commonSteps) {
+        this.driver = CommonSteps.getDriver();
         PageFactory.initElements(driver, this);
     }
 

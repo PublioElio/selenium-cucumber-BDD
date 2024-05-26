@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import steps.CommonSteps;
 
 public class ElementsPageHome {
     public WebDriver driver;
@@ -12,12 +13,9 @@ public class ElementsPageHome {
     @FindBy(xpath = "//select[@id='gh-cat']") public WebElement categoryDropdown;
     @FindBy(xpath = "//input[@id='gh-btn']") public WebElement searchButton;
     @FindBy(xpath = "//h1[@class='srp-controls__count-heading']/span[@class='BOLD'][1]") public WebElement itemsCount;
-    @FindBy(linkText = "Motor") public WebElement motorTabLink;
-    @FindBy(linkText = "Fashion") public WebElement fashionTabLink;
-    @FindBy(linkText = "Toys") public WebElement toysTabLink;
 
-    public ElementsPageHome(WebDriver driver) {
-        this.driver = driver;
+    public ElementsPageHome(CommonSteps commonSteps) {
+        this.driver = CommonSteps.getDriver();
         PageFactory.initElements(driver, this);
     }
 }

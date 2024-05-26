@@ -1,20 +1,20 @@
 package steps;
 
+import actions.pages.ActionsPageHome;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import elements.pages.ElementsPageHome;
 
 public class EbayHomeSteps {
     private final WebDriver driver;
-    private final ElementsPageHome pageHome;
+    private final ActionsPageHome actionsPageHome;
 
-    public EbayHomeSteps() {
-        driver = CommonSteps.getDriver();
-        pageHome = new ElementsPageHome(driver);
+    public EbayHomeSteps(CommonSteps commonSteps) {
+        this.driver = CommonSteps.getDriver();
+        actionsPageHome = new ActionsPageHome(commonSteps);
     }
 
     @Given("I am on this page {string}")
@@ -24,7 +24,7 @@ public class EbayHomeSteps {
 
     @When("I click on the Advanced Search link")
     public void i_click_on_the_advanced_search_link() {
-        pageHome.advancedSearchLink.click();
+        actionsPageHome.clickOnAdvancedLink();
     }
 
     @Then("I should see this page {string}")
@@ -35,22 +35,22 @@ public class EbayHomeSteps {
 
     @When("I search for {string}")
     public void i_search_for(String item) {
-        pageHome.searchInput.sendKeys(item);
-        pageHome.searchButton.click();
+        actionsPageHome.searchForAnItem(item);
+        actionsPageHome.clickOnSearchButton();
     }
 
     @Then("I should see at least {int} items count")
     public void i_should_see_at_least_items_count(int count) {
-        String countText = pageHome.itemsCount.getText();
+        String countText = String.valueOf(actionsPageHome.getSearchItemsCount());
         Assert.assertTrue("Count is less than " + count + " items count",
                 Integer.parseInt(countText.replaceAll(",", "")) >= count);
     }
 
     @When("I search for {string} on the category {string}")
     public void i_search_for_on_the_category(String item, String category) {
-        pageHome.searchInput.sendKeys(item);
-        pageHome.categoryDropdown.sendKeys(category);
-        pageHome.searchButton.click();
+        actionsPageHome.searchForAnItem(item);
+        actionsPageHome.selectSearchCategory(category);
+        actionsPageHome.clickOnSearchButton();
     }
 
     @When("I click on the {string}")

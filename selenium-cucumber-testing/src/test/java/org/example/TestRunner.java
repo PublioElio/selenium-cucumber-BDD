@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = "steps",
         //dryRun = true,
         //monochrome = true,
-        tags = "@Home00",
+        tags = "@Home00 or @Home01 or @Home02 or @Home03",
         //name = "Ebay",
         plugin = {"pretty", "html:target/cucumber-reports"}
 )
