@@ -15,12 +15,6 @@ S
 #features/EbayAdvancedSearch.feature,9\c\9c85b1b59ae06b5e590163d97788a2cbba81599a
 T
 $src/test/java/steps/CommonSteps.java,c\3\c3e17c5e35bdae3affe76bf677830e32667747b7
-X
-(src/test/java/page_objects/HomePage.java,0\9\09dbda2079f8a1671ead62b9b9ae08ca9c645f46
-b
-2src/test/java/page_objects/PageAdvancedSearch.java,a\a\aa6076c5ad5084a6a06b074bc77768e93d55c363
-\
-,src/test/java/page_objects/PageHomePage.java,3\9\39babc7a8cf46dcc13114413c7c8c25dbec2365b
 b
 2src/test/java/page_objects/pages/PageHomePage.java,5\8\58d169682a830fe87a9661cdf3158393dbc52248
 h
@@ -31,3 +25,5 @@ a
 1src/test/java/page_objects/pages/PageFashion.java,c\b\cbc31b094ec1a5bb5be273018f51b832f418ce78
 ^
 .src/test/java/page_objects/pages/PageToys.java,8\9\892eb594784090d6fc082c8c80fd6c02acf420b3
+^
+.src/test/java/page_objects/pages/PageHome.java,1\3\135a74b8e1e2e6d68d59d1e2367a0239361f285a

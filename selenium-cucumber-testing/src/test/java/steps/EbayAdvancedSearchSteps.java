@@ -4,17 +4,20 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import page_objects.pages.PageAdvancedSearch;
 
 public class EbayAdvancedSearchSteps {
 
     WebDriver driver;
+    PageAdvancedSearch pageAdvancedSearch;
 
     public EbayAdvancedSearchSteps() {
         driver = CommonSteps.getDriver();
+        pageAdvancedSearch = new PageAdvancedSearch(driver);
     }
     @When("I click on the Ebay Logo")
     public void i_click_on_the_ebay_logo() {
-        driver.findElement(By.xpath("//a[@id='gh-la']")).click();
+        pageAdvancedSearch.ebayLogo.click();
     }
 
     @When("I advanced search for an item")
