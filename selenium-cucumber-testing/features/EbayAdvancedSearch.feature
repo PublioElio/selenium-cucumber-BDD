@@ -12,3 +12,4 @@ Feature: Ebay Advanced Search Page
     When I advanced search for an item
       | keyword | exclude     | min | max |
       | iphone  | refurbished | 100 | 900 |
+
