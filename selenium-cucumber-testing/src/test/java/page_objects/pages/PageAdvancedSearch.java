@@ -1,14 +1,12 @@
 package page_objects.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PageAdvancedSearch {
-
-    WebDriver driver;
+    public WebDriver driver;
     @FindBy(xpath = "//a[@id='gh-la']") public WebElement ebayLogo;
     @FindBy(xpath = "//input[@id='_nkw']") public WebElement searchInput;
     @FindBy(xpath = "//input[@id='_ex_kw']") public WebElement excludeWordsInput;
