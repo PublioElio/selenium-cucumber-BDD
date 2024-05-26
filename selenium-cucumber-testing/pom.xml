@@ -8,7 +8,7 @@
   <packaging>jar</packaging>
 
   <name>selenium-cucumber-testing</name>
-  <url>http://maven.apache.org</url>
+  <url>https://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -53,5 +53,12 @@
       <version>4.19.0</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
+    <dependency>
+      <groupId>net.masterthought</groupId>
+      <artifactId>maven-cucumber-reporting</artifactId>
+      <version>5.8.1</version>
+    </dependency>
   </dependencies>
+
 </project>
