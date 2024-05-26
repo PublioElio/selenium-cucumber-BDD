@@ -3,15 +3,15 @@ package steps;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import page_objects.pages.PageAdvancedSearch;
+import elements.pages.ElementsPageAdvSearch;
 
 public class EbayAdvancedSearchSteps {
     private final WebDriver driver;
-    private final PageAdvancedSearch pageAdvancedSearch;
+    private final ElementsPageAdvSearch pageAdvancedSearch;
 
     public EbayAdvancedSearchSteps() {
         driver = CommonSteps.getDriver();
-        pageAdvancedSearch = new PageAdvancedSearch(driver);
+        pageAdvancedSearch = new ElementsPageAdvSearch(driver);
     }
     @When("I click on the Ebay Logo")
     public void i_click_on_the_ebay_logo() {

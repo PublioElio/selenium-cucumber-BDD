@@ -6,15 +6,15 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import page_objects.pages.PageHome;
+import elements.pages.ElementsPageHome;
 
 public class EbayHomeSteps {
     private final WebDriver driver;
-    private final PageHome pageHome;
+    private final ElementsPageHome pageHome;
 
     public EbayHomeSteps() {
         driver = CommonSteps.getDriver();
-        pageHome = new PageHome(driver);
+        pageHome = new ElementsPageHome(driver);
     }
 
     @Given("I am on this page {string}")

@@ -1,11 +1,11 @@
-package page_objects.pages;
+package elements.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PageAdvancedSearch {
+public class ElementsPageAdvSearch {
     public WebDriver driver;
     @FindBy(xpath = "//a[@id='gh-la']") public WebElement ebayLogo;
     @FindBy(xpath = "//input[@id='_nkw']") public WebElement searchInput;
@@ -14,7 +14,7 @@ public class PageAdvancedSearch {
     @FindBy(xpath = "//input[@name='_udhi']") public WebElement maxPriceInput;
     @FindBy(xpath = "//button[contains(@data-marko, 's0-1-17-11')]") public WebElement searchButton;
 
-    public PageAdvancedSearch(WebDriver driver) {
+    public ElementsPageAdvSearch(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
