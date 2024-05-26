@@ -1,9 +1,7 @@
 package steps;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -14,19 +12,18 @@ public class EbayAdvancedSearchSteps {
     public EbayAdvancedSearchSteps() {
         driver = CommonSteps.getDriver();
     }
-
-    @Given("I am on the Advanced Search Page")
-    public void i_am_on_the_advanced_search_page() {
-        driver.get("https://www.ebay.com/sch/ebayadvsearch");
-    }
     @When("I click on the Ebay Logo")
     public void i_click_on_the_ebay_logo() {
         driver.findElement(By.xpath("//a[@id='gh-la']")).click();
     }
-    @Then("I am taken to the Ebay Home Page")
-    public void i_am_taken_to_the_ebay_home_page() {
-        String expUrl = "https://www.ebay.com/";
-        String actUrl = driver.getCurrentUrl();
-        Assert.assertEquals("Url does not match:", expUrl, actUrl);
+
+    @When("I advanced search for an item")
+    public void i_advanced_search_for_an_item(DataTable dataTable) {
+        driver.findElement(By.xpath("//input[@id='_nkw']")).sendKeys(dataTable.cell(1, 0));
+        driver.findElement(By.xpath("//input[@id='_ex_kw']")).sendKeys(dataTable.cell(1, 1));
+        driver.findElement(By.xpath("//input[@name='_udlo']")).sendKeys(dataTable.cell(1, 2));
+        driver.findElement(By.xpath("//input[@name='_udhi']")).sendKeys(dataTable.cell(1, 3));
+        driver.findElement(By.xpath("//button[contains(@data-marko, 's0-1-17-11')]")).click();
     }
+
 }

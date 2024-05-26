@@ -24,11 +24,10 @@ public class EbayHomeSteps {
         driver.findElement(By.xpath("//*[@id='gh-as-a']")).click();
     }
 
-    @Then("I should see the Advanced Search page")
-    public void i_should_see_the_advanced_search_page() {
-        String expUrl = "https://www.ebay.com/sch/ebayadvsearch";
-        String actUrl = driver.getCurrentUrl();
-        Assert.assertEquals("Url does not match", expUrl, actUrl);
+    @Then("I should see this page {string}")
+    public void i_should_see_this_page(String expectedUrl) {
+        String actualUrl = driver.getCurrentUrl();
+        Assert.assertEquals("Urls do not match", expectedUrl, actualUrl);
     }
 
     @When("I search for {string}")
