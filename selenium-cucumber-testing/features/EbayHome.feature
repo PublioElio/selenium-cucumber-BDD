@@ -20,6 +20,10 @@ Feature: Ebay Home Page Scenarios
     @Home03
     Scenario Outline: Home page links
       When I click on the '<link>'
-      Then I validate the page is '<page>' and the title is '<title>'
+      Then I validate the page is '<url>' and the title is '<title>'
       Examples:
-        |  |
+        | link    | url                                                                | title                                          |
+        | Motors  | https://www.ebay.com/b/Auto-Parts-and-Vehicles/6000/bn_1865334     | eBay Motors: Auto Parts and Vehicles \| eBay   |
+        | Fashion | https://www.ebay.com/b/Clothing-Shoes-Accessories/11450/bn_1852545 | Clothing, Shoes & Accessories for sale \| eBay |
+        | Toys    | https://www.ebay.com/b/Toys-Hobbies/220/bn_1865497                 | Toys & Hobbies products for sale \| eBay       |
+

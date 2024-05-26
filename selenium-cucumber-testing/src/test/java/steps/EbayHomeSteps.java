@@ -51,6 +51,18 @@ public class EbayHomeSteps {
         driver.findElement(By.xpath("//input[@id='gh-btn']")).click();
     }
 
+    @When("I click on the {string}")
+    public void i_click_on_the(String linkText) {
+        driver.findElement(By.linkText(linkText)).click();
+    }
+    @Then("I validate the page is {string} and the title is {string}")
+    public void i_validate_the_page_is_and_the_title_is(String url, String pageTitle) {
+        String actualUrl = driver.getCurrentUrl();
+        String actualTitle = driver.getTitle();
+        Assert.assertEquals("Urls do not match", url, actualUrl);
+        Assert.assertEquals("Titles do not match", pageTitle, actualTitle);
+    }
+
 }
 
 
