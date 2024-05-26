@@ -7,7 +7,7 @@ Feature: Ebay Advanced Search Page
     When I click on the Ebay Logo
     Then I should see this page 'https://www.ebay.com/'
 
-  @AdvSearch01
+  @AdvSearch01 @SetCookies
   Scenario: Advanced Search an item
     When I advanced search for an item
       | keyword | exclude     | min | max |

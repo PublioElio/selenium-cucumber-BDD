@@ -7,12 +7,12 @@ Feature: Ebay Home Page Scenarios
     When I click on the Advanced Search link
     Then I should see this page 'https://www.ebay.com/sch/ebayadvsearch'
 
-  @Home01
+  @Home01 @SetCookies @Test
   Scenario: Search items count
     When I search for 'iphone'
     Then I should see at least 1000 items count
 
-  @Home02
+  @Home02 @SetCookies
   Scenario: Search an item on a category
     When I search for 'toys' on the category 'Toys & Hobbies'
     Then I should see at least 1000 items count

@@ -1,7 +1,7 @@
 package steps;
 
-import io.cucumber.java.Before;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,6 +19,15 @@ public class CommonSteps {
         optionList.add("--incognito");
         options.addArguments(optionList);
         driver = new ChromeDriver(options);
+    }
+
+    @Before("@SetCookies")
+    public void setCookies() {
+    }
+
+    @After("@Test")
+    public void testAfterHook() {
+        System.out.println("This is the after hook for the @Test tag");
     }
 
     @After

@@ -55,6 +55,7 @@ public class EbayHomeSteps {
     public void i_click_on_the(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
+
     @Then("I validate the page is {string} and the title is {string}")
     public void i_validate_the_page_is_and_the_title_is(String url, String pageTitle) {
         String actualUrl = driver.getCurrentUrl();
